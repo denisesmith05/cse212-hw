@@ -33,6 +33,17 @@ public class Maze
     public void MoveLeft()
     {
         // FILL IN CODE
+        // Get the current position as a tuple
+        var currentPosition = (_currX, _currY);
+        // Check if moving left is possible in the maze map (using index 2 for the left direction)
+        if (_mazeMap.ContainsKey(currentPosition) && _mazeMap[currentPosition][0] == true)
+        {
+            _currX--;  // Move left (decrement X coordinate)
+        }
+        else {
+            throw new InvalidOperationException ($"Can't go that way!");
+        }
+
     }
 
     /// <summary>
@@ -42,6 +53,16 @@ public class Maze
     public void MoveRight()
     {
         // FILL IN CODE
+        // Get the current position as a tuple
+        var currentPosition = (_currX, _currY);
+        // Check if moving left is possible in the maze map (using index 1 for the right direction)
+        if (_mazeMap.ContainsKey(currentPosition) && _mazeMap[currentPosition][1] == true)
+        {
+            _currX++;  // Move right (icrement X coordinate)
+        }
+        else {
+            throw new InvalidOperationException ($"Can't go that way!");
+        }
     }
 
     /// <summary>
@@ -51,6 +72,16 @@ public class Maze
     public void MoveUp()
     {
         // FILL IN CODE
+         // Get the current position as a tuple
+        var currentPosition = (_currX, _currY);
+        // Check if moving left is possible in the maze map (using index 2 for the upper direction)
+        if (_mazeMap.ContainsKey(currentPosition) && _mazeMap[currentPosition][2] == true)
+        {
+            _currY--;  // Move up (icrement Y coordinate)
+        }
+        else {
+            throw new InvalidOperationException ($"Can't go that way!");
+        }
     }
 
     /// <summary>
@@ -60,6 +91,16 @@ public class Maze
     public void MoveDown()
     {
         // FILL IN CODE
+         // Get the current position as a tuple
+        var currentPosition = (_currX, _currY);
+        // Check if moving left is possible in the maze map (using index 3 for the down direction)
+        if (_mazeMap.ContainsKey(currentPosition) && _mazeMap[currentPosition][3] == true)
+        {
+            _currY++;  // Move down (decrement Y coordinate)
+        }
+        else {
+            throw new InvalidOperationException ($"Can't go that way!");
+        }
     }
 
     public string GetStatus()

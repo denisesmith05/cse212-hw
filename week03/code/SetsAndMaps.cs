@@ -216,7 +216,7 @@ public static class SetsAndMaps
             var magnitude = feature.Properties.Magnitude;
 
             // Create a summary string
-            earthquakeSummaries.Add($"Location: {place}, Magnitude: {magnitude}");
+            earthquakeSummaries.Add($"{place} - Mag {magnitude}");
         }
 
         // Return the list of earthquake summaries as an array
