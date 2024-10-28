@@ -36,9 +36,18 @@ public class LinkedList : IEnumerable<int>
         // TODO Problem 1
         // Create new node
         Node newNode = new(value);
-        newNode.Prev = _tail;
-        _tail.Next = newNode;
-        _tail = newNode;
+        
+        if (_tail is null) // Check if the list is empty
+        {
+            _head = newNode; // Set head and tail to new node
+            _tail = newNode;
+        }
+        else
+        {
+            newNode.Prev = _tail;
+            _tail.Next = newNode;
+            _tail = newNode;
+        }
     }
 
 
