@@ -76,4 +76,29 @@ public class Maze
         // Otherwise, we are good
         return true;
     }
+    public List<ValueTuple<int, int>> GetPossibleMoves(int x, int y, List<ValueTuple<int, int>> currPath)
+    {
+        var moves = new List<ValueTuple<int, int>>();
+
+        // Define potential moves: right, left, down, up
+        var potentialMoves = new List<ValueTuple<int, int>>()
+        {
+            (x + 1, y), // Right
+            (x - 1, y), // Left
+            (x, y + 1), // Down
+            (x, y - 1)  // Up
+        };
+
+        foreach (var (nx, ny) in potentialMoves)
+        {
+            // Check if each move is valid
+            if (IsValidMove(currPath, nx, ny))
+            {
+                moves.Add((nx, ny));
+            }
+        }
+
+        return moves;
+    }
+
 }
