@@ -39,12 +39,20 @@ public class Node
         // TODO Start Problem 2
         if (value == Data)
         return true;
+
+         if (value < Data)
+        return Left != null && Left.Contains(value);
+    
+        return Right != null && Right.Contains(value);
     }
 
     public int GetHeight()
     {
 
         // TODO Start Problem 4
-        return 0; // Replace this line with the correct return statement(s)
+        int leftHeight = Left?.GetHeight() ?? 0;
+        int rightHeight = Right?.GetHeight() ?? 0;
+
+        return 1 + Math.Max(leftHeight, rightHeight);
     }
 }
